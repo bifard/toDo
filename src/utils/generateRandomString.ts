@@ -1,0 +1,1 @@
+export const generateRandomString = () => Math.random().toString(36).substring(2,15); //Генерируем случайные строки в js

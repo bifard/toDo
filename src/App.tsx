@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import { FormToDo } from './components/Logic/FormToDo/FormToDo';
+import { ToDoItem } from './components/Logic/ToDoItem/ToDoItem';
+import { Header } from './components/UI/Header/Header';
+import { TDefaultState, TTodo } from './reducer/reducer';
 
-function App() {
+
+
+
+export function App() {
+  const listTodo = useSelector<TDefaultState, Array<TTodo>>(store => store.todoList)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <FormToDo/>
+      {listTodo.map(todo => <ToDoItem key={todo.todoId} text={todo.text} isCheck={todo.isCompleted} idCheckbox={todo.todoId} />)}
     </div>
   );
 }
 
-export default App;
+

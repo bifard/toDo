@@ -1,0 +1,7 @@
+.container{
+  background-color: greenyellow;
+ display: flex;
+}
+.h1{
+  margin: 0 auto;
+}

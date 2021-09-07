@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+.container{
+  background-color: grey;
+  font-family: 'Urbanist', sans-serif;;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-left: 5px;
+  border: 1px solid grey;
+}
+.container:hover{
+  border: 1px solid black;
+}
+.text{
+  flex-grow: 1;
+  padding-left: 10px;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.text:hover{
+  opacity: 0.7;
+}
+.checkbox{
+  display: none;
+}
+.checkbox:checked + .text{
+ text-decoration: line-through;
+}
+
+.label{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.checkbox:checked + .label{
+  border-color: green;
+
+}
+.checkbox:checked + .label::before {
+  position: relative;
+  color: green;
+  bottom: 4px;
+  left: 1px;
+  content: '\2714';
+}
