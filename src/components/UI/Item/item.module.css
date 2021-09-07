@@ -23,7 +23,7 @@
 .checkbox{
   display: none;
 }
-.checkbox:checked + .text{
+.checkbox:checked + .label + .text{
  text-decoration: line-through;
 }
 
@@ -35,7 +35,6 @@
 }
 .checkbox:checked + .label{
   border-color: green;
-
 }
 .checkbox:checked + .label::before {
   position: relative;
