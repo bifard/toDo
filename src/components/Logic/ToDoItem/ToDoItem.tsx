@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TDefaultState, TTodo } from "../../../reducer/reducer";
+import { TDefaultState, TTodo, UPDATE_TODO } from "../../../reducer/reducer";
 import { Item } from "../../UI/Item/Item";
 
 interface IProps {
@@ -15,12 +15,12 @@ export function ToDoItem({text, isCheck, idCheckbox}:IProps){
 
   function deletTodo(){
     const todo = todos.filter(item => item.todoId !== idCheckbox);
-    dispatch({type: 'UPDATE_TODO', todoList: [...todo]})
+    dispatch({type: UPDATE_TODO, todoList: [...todo]})
   }
   function toComplited(){
     const todo = todos.filter(item => item.todoId === idCheckbox);
     todo[0].isCompleted= !todo[0].isCompleted;
-    dispatch({type: 'UPDATE_TODO', todoList: [...todos]})
+    dispatch({type: UPDATE_TODO, todoList: [...todos]})
   }
   return(
     <Item 
