@@ -10,7 +10,12 @@ interface IForm {
 export function Form({inputValue, addToDo, hendelChange}:IForm){
   return(
     <form className={styles.form}>
-      <input onChange={(event)=>hendelChange(event)} className={styles.input} value={inputValue}></input>
+      <input 
+        onChange={(event)=>hendelChange(event)} 
+        className={styles.input} 
+        value={inputValue}
+        ></input>
+      
       <button onClick={(event)=>{
         event.preventDefault();
         addToDo();

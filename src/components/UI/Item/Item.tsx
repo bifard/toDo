@@ -14,7 +14,7 @@ export function Item({text,isCheck, idCheckbox, onChangeCheckbox, onDelet}:IProp
       <input onChange={onChangeCheckbox} type='checkbox' id={idCheckbox} checked={isCheck} className={styles.checkbox}/>
       <label className={styles.label} htmlFor={idCheckbox}/>
       <label className={styles.text} htmlFor={idCheckbox} >{text}</label>
-      <button onClick={onDelet}>Del</button>
+      <div className={styles.del} onClick={onDelet}>Del</div>
     </div>
   );
 }
